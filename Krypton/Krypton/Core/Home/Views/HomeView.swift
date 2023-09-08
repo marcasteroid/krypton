@@ -21,11 +21,7 @@ struct HomeView: View {
             VStack {
                 HStack {
                     CircleButtonView(iconName: showPortfolio ? CircleButtonConstants.plusButtonImageName : CircleButtonConstants.infoButtonImageName)
-                        .onTapGesture {
-                            withAnimation(.easeOut) {
-                                showPortfolio.toggle()
-                            }
-                        }
+                        .animation(nil, value: UUID())
                     Spacer()
                     Text(showPortfolio ? HomeViewConstants.portfolioHeaderTitle : HomeViewConstants.livePricesHeaderTitle)
                         .font(Font.pageTitle)
