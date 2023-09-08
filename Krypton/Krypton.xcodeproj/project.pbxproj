@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A9291C2D2AAB6544006C5226 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9291C2C2AAB6544006C5226 /* CircleButtonView.swift */; };
 		A9291C302AAB65C3006C5226 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9291C2F2AAB65C3006C5226 /* Constants.swift */; };
+		A9291C332AAB70DD006C5226 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9291C322AAB70DD006C5226 /* Coin.swift */; };
 		A9608C222AAB599F00CF272C /* KryptonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9608C212AAB599F00CF272C /* KryptonApp.swift */; };
 		A9608C242AAB599F00CF272C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9608C232AAB599F00CF272C /* ContentView.swift */; };
 		A9608C262AAB59A000CF272C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9608C252AAB59A000CF272C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		A9291C2C2AAB6544006C5226 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		A9291C2F2AAB65C3006C5226 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A9291C322AAB70DD006C5226 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		A9608C1E2AAB599F00CF272C /* Krypton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krypton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9608C212AAB599F00CF272C /* KryptonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KryptonApp.swift; sourceTree = "<group>"; };
 		A9608C232AAB599F00CF272C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 			path = CircleButton;
 			sourceTree = "<group>";
 		};
+		A9291C312AAB70BF006C5226 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A9291C322AAB70DD006C5226 /* Coin.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A9608C152AAB599F00CF272C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 			children = (
 				A9608C3D2AAB644F00CF272C /* Fonts */,
 				A9608C2F2AAB5DE300CF272C /* Extensions */,
+				A9291C312AAB70BF006C5226 /* Models */,
 				A9608C362AAB61B800CF272C /* Core */,
 				A9608C272AAB59A000CF272C /* Preview Content */,
 				A9608C3C2AAB638800CF272C /* Info.plist */,
@@ -234,6 +245,7 @@
 				A9608C242AAB599F00CF272C /* ContentView.swift in Sources */,
 				A9608C222AAB599F00CF272C /* KryptonApp.swift in Sources */,
 				A9608C332AAB608E00CF272C /* Font+Extensions.swift in Sources */,
+				A9291C332AAB70DD006C5226 /* Coin.swift in Sources */,
 				A9291C302AAB65C3006C5226 /* Constants.swift in Sources */,
 				A9608C3B2AAB622600CF272C /* HomeView.swift in Sources */,
 				A9608C312AAB5DF500CF272C /* Color+Extensions.swift in Sources */,
