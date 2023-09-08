@@ -59,7 +59,7 @@ extension Font {
     }
 
     public static var pageTitle: Font {
-        return Font.custom("LexendDeca-SemiBold", size: 33)
+        return Font.custom("LexendDeca-SemiBold", size: 25)
     }
     
     public static var textField: Font {

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    // MARK: Properties
+    @State private var showPortfolio: Bool = false
+    
+    
     var body: some View {
         ZStack {
             // Background layer
@@ -15,8 +19,27 @@ struct HomeView: View {
                 .ignoresSafeArea()
             // Content layer
             VStack {
-                Text("Header")
-                    .font(Font.pageTitle)
+                HStack {
+                    CircleButtonView(iconName: showPortfolio ? CircleButtonConstants.plusButtonImageName : CircleButtonConstants.infoButtonImageName)
+                        .onTapGesture {
+                            withAnimation(.easeOut) {
+                                showPortfolio.toggle()
+                            }
+                        }
+                    Spacer()
+                    Text(showPortfolio ? HomeViewConstants.portfolioHeaderTitle : HomeViewConstants.livePricesHeaderTitle)
+                        .font(Font.pageTitle)
+                        .foregroundColor(Color.theme.accent)
+                    Spacer()
+                    CircleButtonView(iconName: CircleButtonConstants.rightArrowImageName)
+                        .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
+                        .onTapGesture {
+                            withAnimation(.easeOut) {
+                                showPortfolio.toggle()
+                            }
+                        }
+                }
+                .padding(.horizontal)
                 Spacer(minLength: 0)
             }
         }
