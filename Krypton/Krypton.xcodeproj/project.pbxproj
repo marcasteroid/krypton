@@ -11,6 +11,7 @@
 		A9608C242AAB599F00CF272C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9608C232AAB599F00CF272C /* ContentView.swift */; };
 		A9608C262AAB59A000CF272C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9608C252AAB59A000CF272C /* Assets.xcassets */; };
 		A9608C292AAB59A000CF272C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9608C282AAB59A000CF272C /* Preview Assets.xcassets */; };
+		A9608C312AAB5DF500CF272C /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9608C302AAB5DF500CF272C /* Color+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		A9608C232AAB599F00CF272C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9608C252AAB59A000CF272C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9608C282AAB59A000CF272C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A9608C302AAB5DF500CF272C /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		A9608C202AAB599F00CF272C /* Krypton */ = {
 			isa = PBXGroup;
 			children = (
+				A9608C2F2AAB5DE300CF272C /* Extensions */,
 				A9608C212AAB599F00CF272C /* KryptonApp.swift */,
 				A9608C232AAB599F00CF272C /* ContentView.swift */,
 				A9608C252AAB59A000CF272C /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				A9608C282AAB59A000CF272C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9608C2F2AAB5DE300CF272C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A9608C302AAB5DF500CF272C /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				A9608C242AAB599F00CF272C /* ContentView.swift in Sources */,
 				A9608C222AAB599F00CF272C /* KryptonApp.swift in Sources */,
+				A9608C312AAB5DF500CF272C /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
