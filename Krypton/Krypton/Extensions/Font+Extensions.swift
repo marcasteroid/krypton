@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Font {
     
-    public static var body: Font {
+    public static var textBody: Font {
         return Font.custom("LexendDeca-Regular", size: 14)
     }
     
