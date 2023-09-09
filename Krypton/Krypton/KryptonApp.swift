@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct KryptonApp: App {
+    @StateObject private var viewModel = HomeViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 HomeView()
                     .toolbar(.hidden)
             }
+            .environmentObject(viewModel)
         }
     }
 }

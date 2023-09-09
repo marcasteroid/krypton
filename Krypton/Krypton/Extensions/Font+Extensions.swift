@@ -31,7 +31,7 @@ extension Font {
     }
     
     public static var caption: Font {
-        return Font.custom("LexendDeca-Regular", size: 10)
+        return Font.custom("LexendDeca-Regular", size: 9)
     }
     
     public static var tabBar: Font {

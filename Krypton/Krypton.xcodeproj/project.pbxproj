@@ -23,6 +23,7 @@
 		A9608C412AAB64DC00CF272C /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9608C3E2AAB64DC00CF272C /* LexendDeca-Regular.ttf */; };
 		A9608C422AAB64DC00CF272C /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9608C3F2AAB64DC00CF272C /* LexendDeca-SemiBold.ttf */; };
 		A9608C432AAB64DC00CF272C /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9608C402AAB64DC00CF272C /* LexendDeca-Bold.ttf */; };
+		A98A9D132AAC406900F24CA6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D122AAC406900F24CA6 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A9608C3E2AAB64DC00CF272C /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		A9608C3F2AAB64DC00CF272C /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
 		A9608C402AAB64DC00CF272C /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
+		A98A9D122AAC406900F24CA6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		A9608C392AAB621100CF272C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A98A9D122AAC406900F24CA6 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				A95BCF892AABB6B600652A3D /* PreviewProvider+Extensions.swift in Sources */,
 				A9608C332AAB608E00CF272C /* Font+Extensions.swift in Sources */,
 				A9291C332AAB70DD006C5226 /* Coin.swift in Sources */,
+				A98A9D132AAC406900F24CA6 /* HomeViewModel.swift in Sources */,
 				A9291C302AAB65C3006C5226 /* Constants.swift in Sources */,
 				A9608C3B2AAB622600CF272C /* HomeView.swift in Sources */,
 				A95BCF8B2AABBBA200652A3D /* Double+Extensions.swift in Sources */,

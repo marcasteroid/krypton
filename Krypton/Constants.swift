@@ -13,6 +13,12 @@ struct HomeViewConstants {
     static let livePricesHeaderTitle: String = "Live prices"
     // Portfolio header title
     static let portfolioHeaderTitle: String = "Portfolio"
+    // List coin header
+    static let listCoinHeader: String = "Coin"
+    // List holdings header
+    static let listHoldingsHeader: String = "Holdings"
+    // List price header
+    static let listPriceHeader: String = "Price"
 }
 
 // MARK: - Circle button
