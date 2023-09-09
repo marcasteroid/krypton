@@ -14,7 +14,8 @@ struct Coin: Identifiable, Codable {
     let currentPrice: Double
     let marketCap, marketCapRank, fullyDilutedValuation: Double?
     let totalVolume, high24H, low24H: Double?
-    let priceChange24H, priceChangePercentage24H: Double?
+    let priceChange24H: Double?
+    let priceChangePercentage24H: Double?
     let marketCapChange24H: Double?
     let marketCapChangePercentage24H: Double?
     let circulatingSupply, totalSupply, maxSupply, ath: Double?
@@ -27,7 +28,7 @@ struct Coin: Identifiable, Codable {
     let priceChangePercentage24HInCurrency: Double?
     let currentHoldings: Double?
     
-    enum CondingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id, symbol, name, image
         case currentPrice = "current_price"
         case marketCap = "market_cap"
@@ -52,7 +53,7 @@ struct Coin: Identifiable, Codable {
         case lastUpdated = "last_updated"
         case sparklineIn7D = "sparkline_in_7d"
         case priceChangePercentage24HInCurrency = "price_change_percentage_24h_in_currency"
-        case currentHoldings = "current_holdings"
+        case currentHoldings
     }
     
     func updateHoldings(amount: Double) -> Coin {

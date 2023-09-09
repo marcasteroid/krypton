@@ -77,6 +77,7 @@ extension HomeView {
                     .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 14))
             }
         }
+        .scrollIndicators(.hidden)
         .listStyle(.plain)
     }
     
@@ -88,6 +89,7 @@ extension HomeView {
                     .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 14))
             }
         }
+        .scrollIndicators(.hidden)
         .listStyle(.plain)
     }
     

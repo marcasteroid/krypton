@@ -24,6 +24,7 @@
 		A9608C422AAB64DC00CF272C /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9608C3F2AAB64DC00CF272C /* LexendDeca-SemiBold.ttf */; };
 		A9608C432AAB64DC00CF272C /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9608C402AAB64DC00CF272C /* LexendDeca-Bold.ttf */; };
 		A98A9D132AAC406900F24CA6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D122AAC406900F24CA6 /* HomeViewModel.swift */; };
+		A98A9D162AAC500200F24CA6 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D152AAC500200F24CA6 /* CoinDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A9608C3F2AAB64DC00CF272C /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
 		A9608C402AAB64DC00CF272C /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
 		A98A9D122AAC406900F24CA6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A98A9D152AAC500200F24CA6 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,6 @@
 		A9608C152AAB599F00CF272C = {
 			isa = PBXGroup;
 			children = (
-				A9291C2F2AAB65C3006C5226 /* Constants.swift */,
 				A9608C202AAB599F00CF272C /* Krypton */,
 				A9608C1F2AAB599F00CF272C /* Products */,
 			);
@@ -105,6 +106,7 @@
 			children = (
 				A9608C3D2AAB644F00CF272C /* Fonts */,
 				A9608C2F2AAB5DE300CF272C /* Extensions */,
+				A98A9D142AAC4FDB00F24CA6 /* Services */,
 				A9291C312AAB70BF006C5226 /* Models */,
 				A9608C362AAB61B800CF272C /* Core */,
 				A9608C272AAB59A000CF272C /* Preview Content */,
@@ -112,6 +114,7 @@
 				A9608C252AAB59A000CF272C /* Assets.xcassets */,
 				A9608C232AAB599F00CF272C /* ContentView.swift */,
 				A9608C212AAB599F00CF272C /* KryptonApp.swift */,
+				A9291C2F2AAB65C3006C5226 /* Constants.swift */,
 			);
 			path = Krypton;
 			sourceTree = "<group>";
@@ -178,6 +181,14 @@
 				A9608C3F2AAB64DC00CF272C /* LexendDeca-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A98A9D142AAC4FDB00F24CA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A98A9D152AAC500200F24CA6 /* CoinDataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 				A9608C242AAB599F00CF272C /* ContentView.swift in Sources */,
 				A9608C222AAB599F00CF272C /* KryptonApp.swift in Sources */,
 				A95BCF892AABB6B600652A3D /* PreviewProvider+Extensions.swift in Sources */,
+				A98A9D162AAC500200F24CA6 /* CoinDataService.swift in Sources */,
 				A9608C332AAB608E00CF272C /* Font+Extensions.swift in Sources */,
 				A9291C332AAB70DD006C5226 /* Coin.swift in Sources */,
 				A98A9D132AAC406900F24CA6 /* HomeViewModel.swift in Sources */,
