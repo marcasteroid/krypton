@@ -64,6 +64,8 @@ extension HomeView {
                     withAnimation(.easeOut) {
                         showPortfolio.toggle()
                     }
+                    let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .soft)
+                    impactFeedbackGenerator.impactOccurred()
                 }
         }
         .padding(.horizontal)
