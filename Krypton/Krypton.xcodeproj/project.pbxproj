@@ -30,6 +30,9 @@
 		A98A9D1E2AAC749200F24CA6 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D1D2AAC749200F24CA6 /* CoinImageService.swift */; };
 		A98A9D202AAC75CA00F24CA6 /* CoinImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D1F2AAC75CA00F24CA6 /* CoinImageViewModel.swift */; };
 		A98A9D222AAC924E00F24CA6 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D212AAC924E00F24CA6 /* LocalFileManager.swift */; };
+		A98A9D262AACA33600F24CA6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D252AACA33600F24CA6 /* SearchBarView.swift */; };
+		A98A9D282AACA5F200F24CA6 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D272AACA5F200F24CA6 /* View+Extensions.swift */; };
+		A98A9D2A2AACAB5E00F24CA6 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D292AACAB5E00F24CA6 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		A98A9D1D2AAC749200F24CA6 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		A98A9D1F2AAC75CA00F24CA6 /* CoinImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageViewModel.swift; sourceTree = "<group>"; };
 		A98A9D212AAC924E00F24CA6 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		A98A9D252AACA33600F24CA6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		A98A9D272AACA5F200F24CA6 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		A98A9D292AACAB5E00F24CA6 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 		A9291C2A2AAB6527006C5226 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A98A9D232AACA30A00F24CA6 /* SearchBar */,
 				A98A9D1A2AAC728E00F24CA6 /* CoinImage */,
 				A9291C2B2AAB6533006C5226 /* CircleButton */,
 			);
@@ -146,6 +153,8 @@
 				A9608C322AAB608E00CF272C /* Font+Extensions.swift */,
 				A95BCF882AABB6B600652A3D /* PreviewProvider+Extensions.swift */,
 				A95BCF8A2AABBBA200652A3D /* Double+Extensions.swift */,
+				A98A9D272AACA5F200F24CA6 /* View+Extensions.swift */,
+				A98A9D292AACAB5E00F24CA6 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +229,14 @@
 				A98A9D1F2AAC75CA00F24CA6 /* CoinImageViewModel.swift */,
 			);
 			path = CoinImage;
+			sourceTree = "<group>";
+		};
+		A98A9D232AACA30A00F24CA6 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				A98A9D252AACA33600F24CA6 /* SearchBarView.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +324,14 @@
 				A98A9D132AAC406900F24CA6 /* HomeViewModel.swift in Sources */,
 				A9291C302AAB65C3006C5226 /* Constants.swift in Sources */,
 				A98A9D222AAC924E00F24CA6 /* LocalFileManager.swift in Sources */,
+				A98A9D262AACA33600F24CA6 /* SearchBarView.swift in Sources */,
+				A98A9D2A2AACAB5E00F24CA6 /* UIApplication+Extension.swift in Sources */,
 				A98A9D192AAC5E7D00F24CA6 /* NetworkManager.swift in Sources */,
 				A98A9D1C2AAC72A000F24CA6 /* CoinImageView.swift in Sources */,
 				A9608C3B2AAB622600CF272C /* HomeView.swift in Sources */,
 				A95BCF8B2AABBBA200652A3D /* Double+Extensions.swift in Sources */,
 				A98A9D1E2AAC749200F24CA6 /* CoinImageService.swift in Sources */,
+				A98A9D282AACA5F200F24CA6 /* View+Extensions.swift in Sources */,
 				A9608C312AAB5DF500CF272C /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,3 +52,10 @@ struct CoinImageViewConstants {
 struct CoinImageServiceConstants {
     static let imageFolderName: String = "coin_images"
 }
+
+// MARK: - Search bar
+struct SearchBarConstants {
+    static let searchBarLeadingImageName: String = "magnifyingglass"
+    static let searchBarClearTextImageName: String = "xmark.circle.fill"
+    static let searchBarPlaceholder: String = "Search by name or symbol..."
+}
