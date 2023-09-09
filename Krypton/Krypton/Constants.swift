@@ -47,3 +47,8 @@ struct NetworkManagerConstants {
 struct CoinImageViewConstants {
     static let imagePlaceholder: String = "questionmark"
 }
+
+// MARK: - Coin image service
+struct CoinImageServiceConstants {
+    static let imageFolderName: String = "coin_images"
+}
