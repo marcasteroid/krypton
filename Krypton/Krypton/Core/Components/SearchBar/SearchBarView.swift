@@ -14,7 +14,7 @@ struct SearchBarView: View {
     var body: some View {
         HStack(alignment: .center) {
             Image(systemName: SearchBarConstants.searchBarLeadingImageName)
-                .foregroundColor(Color.theme.secondaryText)
+                .foregroundColor(Color.theme.secondaryText.opacity(0.5))
             TextField(SearchBarConstants.searchBarPlaceholder, text: $searchText)
                 .foregroundColor(Color.theme.accent)
                 .focused($isTextFieldFocused)
