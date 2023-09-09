@@ -36,3 +36,14 @@ struct CircleButtonConstants {
     // Right arrow button image name
     static let rightArrowImageName: String = "arrow.right"
 }
+
+// MARK: - Network manager
+struct NetworkManagerConstants {
+    static let networkErrorBadURLResponseErrorDescription: String = "[🔥] Bad response from URL"
+    static let networkErrorUnknownErrorDescription: String = "[💀] Unknown error"
+}
+
+// MARK: - Coin image view
+struct CoinImageViewConstants {
+    static let imagePlaceholder: String = "questionmark"
+}

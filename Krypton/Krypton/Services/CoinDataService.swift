@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class CoinDataService {
+final class CoinDataService {
     @Published var allCoins: [Coin] = []
     var coinSubscription: AnyCancellable?
     
@@ -19,26 +19,11 @@ class CoinDataService {
     private func getCoins() {
         guard let url = URL(string: GlobalConstants.baseURL) else { return }
         
-        coinSubscription = URLSession.shared.dataTaskPublisher(for: url)
-            .subscribe(on: DispatchQueue.global(qos: .default))
-            .tryMap { (output) -> Data in
-                guard let reponse = output.response as? HTTPURLResponse, reponse.statusCode >= 200 && reponse.statusCode < 300 else {
-                    throw URLError(.badServerResponse)
-                }
-                return output.data
-            }
-            .receive(on: DispatchQueue.main)
+        coinSubscription = NetworkManager.download(url: url)
             .decode(type: [Coin].self, decoder: JSONDecoder())
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    debugPrint("[DEBUG]: \(error)")
-                }
-            } receiveValue: { [weak self] returnedCoins in
-                self?.allCoins = returnedCoins
+            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] receivedCoins in
+                self?.allCoins = receivedCoins
                 self?.coinSubscription?.cancel()
-            }
+            })
     }
 }
