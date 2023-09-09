@@ -11,6 +11,7 @@ struct HomeView: View {
     // MARK: Properties
     @EnvironmentObject private var homeViewModel: HomeViewModel
     @State private var showPortfolio: Bool = false
+    @State private var noCoinsFound: Bool = false
     
     var body: some View {
         ZStack {
@@ -23,8 +24,22 @@ struct HomeView: View {
                 SearchBarView(searchText: $homeViewModel.searchText)
                 columnHeader
                 if !showPortfolio {
-                    allCoinsList
-                        .transition(.move(edge: .leading))
+                    if !homeViewModel.allCoins.isEmpty {
+                        allCoinsList
+                            .transition(.move(edge: .leading))
+                    } else {
+                        VStack {
+                            Spacer()
+                            Text("Nothing found...")
+                                .font(Font.infoLarge)
+                                .foregroundColor(Color.theme.secondaryText)
+                            Image("crying")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50, height: 50)
+                            Spacer()
+                        }
+                    }
                 }
                 if showPortfolio {
                     portfolioCoinsList
