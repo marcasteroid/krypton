@@ -59,3 +59,8 @@ struct SearchBarConstants {
     static let searchBarClearTextImageName: String = "xmark.circle.fill"
     static let searchBarPlaceholder: String = "Search by name or symbol..."
 }
+
+// MARK: - Statistic view
+struct StatisticViewConstants {
+    static let arrow: String = "triangle.fill"
+}

@@ -21,7 +21,7 @@ struct SearchBarView: View {
                 .showClearButton($searchText)
                 .autocorrectionDisabled()
         }
-        .font(Font.textField)
+        .font(.textField)
         .padding()
         .background(RoundedRectangle(cornerRadius: 25)
                     .fill(Color.theme.backGround)

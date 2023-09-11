@@ -42,13 +42,13 @@ extension CoinRowView {
     private var leftColumn: some View {
         HStack(spacing: 0) {
             Text("\(coin.rank)")
-                .font(Font.textBody)
+                .font(.textBody)
                 .foregroundColor(Color.theme.secondaryText)
                 .frame(minWidth: 30)
             CoinImageView(coin: coin)
                 .frame(width: 30, height: 30)
             Text(coin.symbol.uppercased())
-                .font(Font.infoLarge)
+                .font(.infoLarge)
                 .padding(.leading, 16)
                 .foregroundColor(Color.theme.accent)
         }
@@ -60,7 +60,7 @@ extension CoinRowView {
             Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
             Text((coin.currentHoldings ?? 0).asNumberString())
         }
-        .font(Font.infoLarge)
+        .font(.infoLarge)
         .foregroundColor(Color.theme.accent)
     }
     
@@ -72,7 +72,7 @@ extension CoinRowView {
             Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
                 .foregroundColor((coin.priceChangePercentage24H ?? 0) >= 0 ? Color.theme.blue : Color.theme.red)
         }
-        .font(Font.infoLarge)
+        .font(.infoLarge)
         .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
     }
 }

@@ -21,6 +21,7 @@ struct HomeView: View {
             // Content layer
             VStack {
                 homeHeader
+                HomeStatisticView(showPortfolio: $showPortfolio)
                 SearchBarView(searchText: $homeViewModel.searchText)
                 columnHeader
                 if !showPortfolio {
@@ -31,7 +32,7 @@ struct HomeView: View {
                         VStack {
                             Spacer()
                             Text("Nothing found...")
-                                .font(Font.infoLarge)
+                                .font(.infoLarge)
                                 .foregroundColor(Color.theme.secondaryText)
                             Image("crying")
                                 .resizable()
@@ -71,7 +72,7 @@ extension HomeView {
                 .animation(nil, value: UUID())
             Spacer()
             Text(showPortfolio ? HomeViewConstants.portfolioHeaderTitle : HomeViewConstants.livePricesHeaderTitle)
-                .font(Font.pageTitle)
+                .font(.pageTitle)
                 .foregroundColor(Color.theme.accent)
             Spacer()
             CircleButtonView(iconName: CircleButtonConstants.rightArrowImageName)
@@ -120,7 +121,7 @@ extension HomeView {
             Text(HomeViewConstants.listPriceHeader)
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
         }
-        .font(Font.caption)
+        .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
     }

@@ -221,5 +221,10 @@ final class DeveloperPreview {
         ]),
         priceChangePercentage24HInCurrency: 3952.64,
         currentHoldings: 1.5)
+    
+    // MARK: - Statistic
+    let statistic1 = Statistic(title: "Market cap", value: "€33.11Mln", percentageChange: 34.11)
+    let statistic2 = Statistic(title: "Total value", value: "€1.4Mln")
+    let statistic3 = Statistic(title: "Portfolio value", value: "€5.12Mln", percentageChange: -12.33)
 }
 
