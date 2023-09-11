@@ -11,6 +11,8 @@ import Foundation
 struct GlobalConstants {
     // Base URL
     static let baseURL: String = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h&locale=it"
+    // Market URL
+    static let marketURL: String = "https://api.coingecko.com/api/v3/global"
 }
 
 // MARK: - Home view
@@ -62,5 +64,9 @@ struct SearchBarConstants {
 
 // MARK: - Statistic view
 struct StatisticViewConstants {
-    static let arrow: String = "triangle.fill"
+    static let arrow: String = "arrow.up"
+    static let statisticMarketCapHeaderTitle: String = "Market cap"
+    static let statisticVolumeHeaderTitle: String = "Volume 24h"
+    static let statisticBTCDominanceHeaderTitle: String = "BTC dominance"
+    static let statisticPortfolioValueHeaderTitle: String = "Portfolio value"
 }

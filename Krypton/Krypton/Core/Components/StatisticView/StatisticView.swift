@@ -21,7 +21,7 @@ struct StatisticView: View {
                 .foregroundColor(Color.theme.accent)
             HStack(spacing: 4) {
                 Image(systemName: StatisticViewConstants.arrow)
-                    .font(.info)
+                    .font(.bodySemiBoldSmall)
                     .rotationEffect(Angle(degrees: (statistic.percentageChange ?? 0) >= 0 ? 0 : 180))
                 Text(statistic.percentageChange?.asPercentString() ?? "")
                     .font(.bodySemiBold)
