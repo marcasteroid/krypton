@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class MarketDataService {
-    @Published var markedData: MarketData? = nil
+    @Published var marketData: MarketData? = nil
     var marketDataSubscription: AnyCancellable?
     
     init() {
@@ -22,7 +22,7 @@ final class MarketDataService {
         marketDataSubscription = NetworkManager.download(url: url)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] receivedGlobalData in
-                self?.markedData = receivedGlobalData.data
+                self?.marketData = receivedGlobalData.data
                 self?.marketDataSubscription?.cancel()
             })
     }

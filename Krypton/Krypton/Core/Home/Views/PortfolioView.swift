@@ -62,7 +62,7 @@ extension PortfolioView {
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack(spacing: 20) {
-                ForEach(homeViewModel.allCoins) { coin in
+                ForEach(homeViewModel.searchText.isEmpty ? homeViewModel.portfolioCoins : homeViewModel.allCoins) { coin in
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
                             CoinImageView(coin: coin)
@@ -70,7 +70,7 @@ extension PortfolioView {
                                 .padding(4)
                                 .onTapGesture {
                                     withAnimation(.easeIn) {
-                                        selectedCoin = coin
+                                        updateSelectedCoin(coin: coin)
                                     }
                             }
                             Image(systemName: PortfolioViewConstants.selectedCoinImageName)
@@ -125,7 +125,6 @@ extension PortfolioView {
     private var saveButton: some View {
         Button {
             saveButtonTapped()
-            print("HELLO")
         } label: {
             Text(isSaved ? PortfolioViewConstants.savedButtonTitle : PortfolioViewConstants.saveButtonTitle)
                 .frame(maxWidth: .infinity)
@@ -150,9 +149,11 @@ extension PortfolioView {
     }
     
     private func saveButtonTapped() {
-        guard let coin = selectedCoin else { return }
+        guard let coin = selectedCoin,
+              let amount = Double(quantityText) else { return }
         
-        // TODO: - Save portfolio
+        // Save portfolio
+        homeViewModel.updatePortfolio(coin: coin, amount: amount)
         
         withAnimation {
             isSaved = true
@@ -173,5 +174,15 @@ extension PortfolioView {
     private func removeSelectedCoin() {
         selectedCoin = nil
         homeViewModel.searchText = ""
+    }
+    
+    private func updateSelectedCoin(coin: Coin) {
+        selectedCoin = coin
+        if let portfolioCoin = homeViewModel.portfolioCoins.first(where: { $0.id == coin.id }),
+           let amount = portfolioCoin.currentHoldings {
+            quantityText = "\(amount)"
+        } else {
+            quantityText = ""
+        }
     }
 }

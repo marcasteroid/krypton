@@ -84,3 +84,13 @@ struct PortfolioViewConstants {
     static let savedButtonTitle: String = "SAVED"
     static let selectedCoinImageName: String = "circle.fill"
 }
+
+// MARK: - Portfolio data service
+struct PortfolioDataServiceConstants {
+    static let containerName: String = "PortfolioContainer"
+    static let entityName: String = "Portfolio"
+    static let loadPersistentStoresErrorDescription: String = "[🔥] Error loading Core Data"
+    static let fetchingPortfolioEntitiesErrorDescription: String = "[🔥] Error fetching portfolio entities"
+    static let savingToCoreDataErrorDescription: String = "[🔥] Error saving to Core Data"
+
+}
