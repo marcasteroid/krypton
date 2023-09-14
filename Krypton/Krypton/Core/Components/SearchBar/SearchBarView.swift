@@ -24,7 +24,7 @@ struct SearchBarView: View {
         .font(.textField)
         .padding()
         .background(RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.theme.backGround)
+                    .fill(Color.theme.background)
                     .shadow(color: Color.theme.accent.opacity(0.1), radius: 5, x: 0, y: 0)
         )
         .padding()

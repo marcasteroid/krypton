@@ -37,6 +37,8 @@ struct CircleButtonConstants {
     static let plusButtonImageName: String = "plus"
     // Right arrow button image name
     static let rightArrowImageName: String = "arrow.right"
+    // Close
+    static let closeImageName: String = "xmark.circle.fill"
 }
 
 // MARK: - Network manager
@@ -69,4 +71,16 @@ struct StatisticViewConstants {
     static let statisticVolumeHeaderTitle: String = "Volume 24h"
     static let statisticBTCDominanceHeaderTitle: String = "BTC dominance"
     static let statisticPortfolioValueHeaderTitle: String = "Portfolio value"
+}
+
+// MARK: - Portfolio view
+struct PortfolioViewConstants {
+    static let pageTitle: String = "Edit portfolio"
+    static let currentPriceOfCoin: String = "Current price of"
+    static let amountInPortfolio: String = "Amount in your portfolio"
+    static let textFieldAmountPlaceholder: String = "Ex: 4.6"
+    static let currentValue: String = "Current value"
+    static let saveButtonTitle: String = "SAVE"
+    static let savedButtonTitle: String = "SAVED"
+    static let checkmarkImageName: String = "checkmark.circle"
 }
