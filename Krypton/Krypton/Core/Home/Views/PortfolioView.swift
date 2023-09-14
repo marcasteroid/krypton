@@ -26,25 +26,13 @@ struct PortfolioView: View {
                 coinLogoList
                 if selectedCoin != nil {
                     portfolioInputSection
-                    Button {
-                        saveButtonTapped()
-                        print("HELLO")
-                    } label: {
-                        Text(isSaved ? PortfolioViewConstants.savedButtonTitle : PortfolioViewConstants.saveButtonTitle)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 55)
-                    }
-                    .background(isSaved ? Color.gray.opacity(0.5) : Color.theme.accent)
-                    .foregroundColor(isSaved ? Color.theme.accent : .white)
-                    .font(.bodySemiBold)
-                    .cornerRadius(10)
-                    .padding()
-                    .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0)
-                    .disabled(isSaved)
+                    saveButton
                 }
-
                 Spacer()
             }
+        }
+        .onChange(of: homeViewModel.searchText) { newValue in
+            if newValue == "" { removeSelectedCoin() }
         }
     }
 }
@@ -132,6 +120,24 @@ extension PortfolioView {
         }
         .font(.bodySemiBold)
         .padding()
+    }
+    
+    private var saveButton: some View {
+        Button {
+            saveButtonTapped()
+            print("HELLO")
+        } label: {
+            Text(isSaved ? PortfolioViewConstants.savedButtonTitle : PortfolioViewConstants.saveButtonTitle)
+                .frame(maxWidth: .infinity)
+                .frame(height: 55)
+        }
+        .background(isSaved ? Color.gray.opacity(0.5) : Color.theme.accent)
+        .foregroundColor(isSaved ? Color.theme.accent : .white)
+        .font(.bodySemiBold)
+        .cornerRadius(10)
+        .padding()
+        .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0)
+        .disabled(isSaved)
     }
     
     // MARK: - Functions
