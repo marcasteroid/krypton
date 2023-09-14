@@ -82,5 +82,5 @@ struct PortfolioViewConstants {
     static let currentValue: String = "Current value"
     static let saveButtonTitle: String = "SAVE"
     static let savedButtonTitle: String = "SAVED"
-    static let checkmarkImageName: String = "checkmark.circle"
+    static let selectedCoinImageName: String = "circle.fill"
 }

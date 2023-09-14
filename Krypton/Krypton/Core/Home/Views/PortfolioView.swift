@@ -34,8 +34,8 @@ struct PortfolioView: View {
                             .frame(maxWidth: .infinity)
                             .frame(height: 55)
                     }
-                    .background(Color.theme.accent)
-                    .foregroundColor(.white)
+                    .background(isSaved ? Color.gray.opacity(0.5) : Color.theme.accent)
+                    .foregroundColor(isSaved ? Color.theme.accent : .white)
                     .font(.bodySemiBold)
                     .cornerRadius(10)
                     .padding()
@@ -76,15 +76,21 @@ extension PortfolioView {
             LazyHStack(spacing: 20) {
                 ForEach(homeViewModel.allCoins) { coin in
                     VStack {
-                        CoinImageView(coin: coin)
-                            .frame(width: 75)
-                            .padding(4)
-                            .onTapGesture {
-                                withAnimation(.easeIn) {
-                                    selectedCoin = coin
-                                }
+                        ZStack(alignment: .bottomTrailing) {
+                            CoinImageView(coin: coin)
+                                .frame(width: 75)
+                                .padding(4)
+                                .onTapGesture {
+                                    withAnimation(.easeIn) {
+                                        selectedCoin = coin
+                                    }
                             }
-                        .background(RoundedRectangle(cornerRadius: 10).stroke((selectedCoin?.id == coin.id) ? Color.theme.blue : Color.clear, lineWidth: 1))
+                            Image(systemName: PortfolioViewConstants.selectedCoinImageName)
+                                .imageScale(.small)
+                                .foregroundColor(Color.theme.green)
+                                .frame(width: 18, height: 18)
+                                .opacity((selectedCoin?.id == coin.id) ? 1.0 : 0.0)
+                        }
                         Text(coin.name)
                             .font(.textBody)
                         Text(coin.symbol.uppercased())
@@ -93,7 +99,8 @@ extension PortfolioView {
                     }
                 }
             }
-            .frame(height: 100)
+            .frame(height: 120)
+            .padding([.top, .bottom], 10)
             .padding(.leading)
         })
     }
