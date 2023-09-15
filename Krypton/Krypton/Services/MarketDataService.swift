@@ -13,16 +13,16 @@ final class MarketDataService {
     var marketDataSubscription: AnyCancellable?
     
     init() {
-        getMarkedData()
+        getMarketData()
     }
     
-    private func getMarkedData() {
+    public func getMarketData() {
         guard let url = URL(string: GlobalConstants.marketURL) else { return }
         
         marketDataSubscription = NetworkManager.download(url: url)
             .decode(type: GlobalData.self, decoder: JSONDecoder())
-            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] receivedGlobalData in
-                self?.marketData = receivedGlobalData.data
+            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] returnedGlobalData in
+                self?.marketData = returnedGlobalData.data
                 self?.marketDataSubscription?.cancel()
             })
     }

@@ -27,6 +27,8 @@ struct HomeViewConstants {
     static let listHoldingsHeader: String = "Holdings"
     // List price header
     static let listPriceHeader: String = "Price"
+    // Refresh button image name
+    static let refreshButtonImageName: String = "goforward"
 }
 
 // MARK: - Circle button

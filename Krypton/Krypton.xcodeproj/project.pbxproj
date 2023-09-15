@@ -43,6 +43,7 @@
 		A98A9D262AACA33600F24CA6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D252AACA33600F24CA6 /* SearchBarView.swift */; };
 		A98A9D282AACA5F200F24CA6 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D272AACA5F200F24CA6 /* View+Extensions.swift */; };
 		A98A9D2A2AACAB5E00F24CA6 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A9D292AACAB5E00F24CA6 /* UIApplication+Extension.swift */; };
+		A9AA98B62AB44BC800050E39 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AA98B52AB44BC800050E39 /* HapticManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		A98A9D252AACA33600F24CA6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		A98A9D272AACA5F200F24CA6 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		A98A9D292AACAB5E00F24CA6 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		A9AA98B52AB44BC800050E39 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 			children = (
 				A98A9D182AAC5E7D00F24CA6 /* NetworkManager.swift */,
 				A98A9D212AAC924E00F24CA6 /* LocalFileManager.swift */,
+				A9AA98B52AB44BC800050E39 /* HapticManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				A98A9D1E2AAC749200F24CA6 /* CoinImageService.swift in Sources */,
 				A98A9D282AACA5F200F24CA6 /* View+Extensions.swift in Sources */,
 				A964E4B92AAEF6CE00073FF3 /* MarketData.swift in Sources */,
+				A9AA98B62AB44BC800050E39 /* HapticManager.swift in Sources */,
 				A9608C312AAB5DF500CF272C /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

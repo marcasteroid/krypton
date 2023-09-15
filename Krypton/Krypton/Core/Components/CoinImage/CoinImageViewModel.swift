@@ -27,8 +27,8 @@ class CoinImageViewModel: ObservableObject {
         coinImageDataService.$image
             .sink { [weak self] (_) in
                 self?.isLoading = false
-            } receiveValue: { [weak self] receivedImage in
-                self?.image = receivedImage
+            } receiveValue: { [weak self] returnedImage in
+                self?.image = returnedImage
             }
             .store(in: &cancellables)
     }

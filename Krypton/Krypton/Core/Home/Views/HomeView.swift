@@ -89,8 +89,7 @@ extension HomeView {
                     withAnimation(.easeOut) {
                         showPortfolio.toggle()
                     }
-                    let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .soft)
-                    impactFeedbackGenerator.impactOccurred()
+                    HapticManager.notification(feedbackType: .success)
                 }
         }
         .padding(.horizontal)
@@ -128,6 +127,15 @@ extension HomeView {
             if showPortfolio { Text(HomeViewConstants.listHoldingsHeader) }
             Text(HomeViewConstants.listPriceHeader)
                 .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            Button {
+                withAnimation(.linear(duration: 2.0)) {
+                    homeViewModel.reloadData()
+                }
+            } label: {
+                Image(systemName: HomeViewConstants.refreshButtonImageName)
+            }
+            .rotationEffect(Angle(degrees: homeViewModel.isLoading ? 360 : 0), anchor: .center)
+
         }
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
