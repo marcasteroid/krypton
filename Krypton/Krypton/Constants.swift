@@ -17,29 +17,20 @@ struct GlobalConstants {
 
 // MARK: - Home view
 struct HomeViewConstants {
-    // Live prices header title
     static let livePricesHeaderTitle: String = "Live prices"
-    // Portfolio header title
     static let portfolioHeaderTitle: String = "Portfolio"
-    // List coin header
     static let listCoinHeader: String = "Coin"
-    // List holdings header
     static let listHoldingsHeader: String = "Holdings"
-    // List price header
     static let listPriceHeader: String = "Price"
-    // Refresh button image name
     static let refreshButtonImageName: String = "goforward"
+    static let sortingIndicatorImageName: String = "chevron.down"
 }
 
 // MARK: - Circle button
 struct CircleButtonConstants {
-    // Info button image name
     static let infoButtonImageName: String = "info"
-    // Plus button image name
     static let plusButtonImageName: String = "plus"
-    // Right arrow button image name
     static let rightArrowImageName: String = "arrow.right"
-    // Close
     static let closeImageName: String = "xmark.circle.fill"
 }
 

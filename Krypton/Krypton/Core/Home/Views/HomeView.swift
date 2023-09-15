@@ -122,11 +122,43 @@ extension HomeView {
     // Column header
     private var columnHeader: some View {
         HStack {
-            Text(HomeViewConstants.listCoinHeader)
+            HStack(spacing: 4) {
+                Text(HomeViewConstants.listCoinHeader)
+                Image(systemName: HomeViewConstants.sortingIndicatorImageName)
+                    .opacity((homeViewModel.sortOption == .rank || homeViewModel.sortOption == .rankReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: homeViewModel.sortOption == .rank ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    homeViewModel.sortOption = homeViewModel.sortOption == .rank ? .rankReversed : .rank
+                }
+            }
             Spacer()
-            if showPortfolio { Text(HomeViewConstants.listHoldingsHeader) }
-            Text(HomeViewConstants.listPriceHeader)
-                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            if showPortfolio {
+                HStack(spacing: 4) {
+                    Text(HomeViewConstants.listHoldingsHeader)
+                    Image(systemName: HomeViewConstants.sortingIndicatorImageName)
+                        .opacity((homeViewModel.sortOption == .holdings || homeViewModel.sortOption == .holdingReversed) ? 1.0 : 0.0)
+                        .rotationEffect(Angle(degrees: homeViewModel.sortOption == .holdings ? 0 : 180))
+                }
+                .onTapGesture {
+                    withAnimation(.default) {
+                        homeViewModel.sortOption = homeViewModel.sortOption == .holdings ? .holdingReversed : .holdings
+                    }
+                }
+            }
+            HStack(spacing: 4) {
+                Text(HomeViewConstants.listPriceHeader)
+                Image(systemName: HomeViewConstants.sortingIndicatorImageName)
+                    .opacity((homeViewModel.sortOption == .price || homeViewModel.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: homeViewModel.sortOption == .price ? 0 : 180))
+            }
+            .onTapGesture {
+                withAnimation(.default) {
+                    homeViewModel.sortOption = homeViewModel.sortOption == .price ? .priceReversed : .price
+                }
+            }
+            .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
             Button {
                 withAnimation(.linear(duration: 2.0)) {
                     homeViewModel.reloadData()
