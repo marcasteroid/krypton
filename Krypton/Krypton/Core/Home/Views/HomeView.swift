@@ -13,45 +13,52 @@ struct HomeView: View {
     @State private var showPortfolio: Bool = false
     @State private var showPortfolioView: Bool = false
     @State private var noCoinsFound: Bool = false
+    @State private var selectedCoin: Coin? = nil
+    @State private var showDetailView: Bool = false
     
     var body: some View {
-        ZStack {
-            // Background layer
-            Color.theme.background
-                .ignoresSafeArea()
-                .sheet(isPresented: $showPortfolioView, content: {
-                    PortfolioView()
-                        .environmentObject(homeViewModel)
-                })
-            // Content layer
-            VStack {
-                homeHeader
-                HomeStatisticView(showPortfolio: $showPortfolio)
-                SearchBarView(searchText: $homeViewModel.searchText)
-                columnHeader
-                if !showPortfolio {
-                    if !homeViewModel.allCoins.isEmpty {
-                        allCoinsList
-                            .transition(.move(edge: .leading))
-                    } else {
-                        VStack {
-                            Spacer()
-                            Text("Nothing found...")
-                                .font(.infoLarge)
-                                .foregroundColor(Color.theme.secondaryText)
-                            Image("crying")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50, height: 50)
-                            Spacer()
+        NavigationStack {
+            ZStack {
+                // Background layer
+                Color.theme.background
+                    .ignoresSafeArea()
+                    .sheet(isPresented: $showPortfolioView, content: {
+                        PortfolioView()
+                            .environmentObject(homeViewModel)
+                    })
+                // Content layer
+                VStack {
+                    homeHeader
+                    HomeStatisticView(showPortfolio: $showPortfolio)
+                    SearchBarView(searchText: $homeViewModel.searchText)
+                    columnHeader
+                    if !showPortfolio {
+                        if !homeViewModel.allCoins.isEmpty {
+                            allCoinsList
+                                .transition(.move(edge: .leading))
+                        } else {
+                            VStack {
+                                Spacer()
+                                Text("Nothing found...")
+                                    .font(.infoLarge)
+                                    .foregroundColor(Color.theme.secondaryText)
+                                Image("crying")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50, height: 50)
+                                Spacer()
+                            }
                         }
                     }
+                    if showPortfolio {
+                        portfolioCoinsList
+                            .transition(.move(edge: .trailing))
+                    }
+                    Spacer(minLength: 0)
                 }
-                if showPortfolio {
-                    portfolioCoinsList
-                        .transition(.move(edge: .trailing))
-                }
-                Spacer(minLength: 0)
+            }
+            .navigationDestination(isPresented: $showDetailView) {
+                DetailLoadingView(coin: $selectedCoin)
             }
         }
     }
@@ -101,6 +108,9 @@ extension HomeView {
             ForEach(homeViewModel.allCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumns: false)
                     .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 14))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .scrollIndicators(.hidden)
@@ -113,6 +123,9 @@ extension HomeView {
             ForEach(homeViewModel.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumns: true)
                     .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 14))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .scrollIndicators(.hidden)
@@ -172,5 +185,12 @@ extension HomeView {
         .font(.caption)
         .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
+    }
+}
+
+extension HomeView {
+    private func segue(coin: Coin) {
+        selectedCoin = coin
+        showDetailView.toggle()
     }
 }
