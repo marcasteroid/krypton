@@ -22,11 +22,10 @@ struct DetailLoadingView: View {
 
 struct DetailView: View {
     // MARK: - Properties
-    let coin: Coin
+    @StateObject var detailViewModel: DetailViewModel
     
     init(coin: Coin) {
-        self.coin = coin
-        debugPrint("Initializing detail view for \(coin.name)")
+        self._detailViewModel = StateObject(wrappedValue: DetailViewModel(coin: coin))
     }
     
     var body: some View {

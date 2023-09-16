@@ -13,6 +13,10 @@ struct GlobalConstants {
     static let baseURL: String = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h&locale=it"
     // Market URL
     static let marketURL: String = "https://api.coingecko.com/api/v3/global"
+    // Coin detail URL head
+    static let coinDetailURLHead: String = "https://api.coingecko.com/api/v3/coins/"
+    // Coin detail URL tail
+    static let coinDetailURLTail: String = "?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false"
 }
 
 // MARK: - Home view
