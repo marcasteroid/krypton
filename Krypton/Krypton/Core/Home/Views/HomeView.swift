@@ -57,6 +57,9 @@ struct HomeView: View {
                     Spacer(minLength: 0)
                 }
             }
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
             .navigationDestination(isPresented: $showDetailView) {
                 DetailLoadingView(coin: $selectedCoin)
             }

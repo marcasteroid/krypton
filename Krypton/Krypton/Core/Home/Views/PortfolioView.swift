@@ -34,6 +34,9 @@ struct PortfolioView: View {
         .onChange(of: homeViewModel.searchText) { newValue in
             if newValue == "" { removeSelectedCoin() }
         }
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
     }
 }
 
@@ -66,7 +69,7 @@ extension PortfolioView {
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
                             CoinImageView(coin: coin)
-                                .frame(width: 75)
+                                .frame(width: 50)
                                 .padding(4)
                                 .onTapGesture {
                                     withAnimation(.easeIn) {
@@ -87,8 +90,8 @@ extension PortfolioView {
                     }
                 }
             }
-            .frame(height: 120)
-            .padding([.top, .bottom], 10)
+            .frame(height: 100)
+            .padding([.top], 10)
             .padding(.leading)
         })
     }
@@ -119,7 +122,7 @@ extension PortfolioView {
             }
         }
         .font(.bodySemiBold)
-        .padding()
+        .padding([.top, .leading, .trailing])
     }
     
     private var saveButton: some View {
@@ -128,7 +131,7 @@ extension PortfolioView {
         } label: {
             Text(isSaved ? PortfolioViewConstants.savedButtonTitle : PortfolioViewConstants.saveButtonTitle)
                 .frame(maxWidth: .infinity)
-                .frame(height: 55)
+                .frame(height: 50)
         }
         .background(isSaved ? Color.gray.opacity(0.5) : Color.theme.accent)
         .foregroundColor(isSaved ? Color.theme.accent : .white)
