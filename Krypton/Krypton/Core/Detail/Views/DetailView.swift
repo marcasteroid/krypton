@@ -23,6 +23,7 @@ struct DetailLoadingView: View {
 struct DetailView: View {
     // MARK: - Properties
     @StateObject private var detailViewModel: DetailViewModel
+    @State private var showFullDescription: Bool = false;
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -38,10 +39,12 @@ struct DetailView: View {
             detailHeader
             ChartView(coin: detailViewModel.coin)
                 .padding(.horizontal)
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
+                    descriptionSection
                     overviewSection
                     additionalSection
+                    websiteSection
                 }
             }
             .padding()
@@ -118,5 +121,46 @@ extension DetailView {
                 }
             }
         }
+    }
+    
+    // Description section
+    private var descriptionSection: some View {
+        ZStack {
+            if let coinDescription = detailViewModel.coinDescription, coinDescription.isNotEmpty {
+                VStack {
+                    Text(coinDescription)
+                        .lineLimit(showFullDescription ? nil : 4)
+                    Button {
+                        showFullDescription.toggle()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text(showFullDescription ? DetailViewConstants.readMoreButtonTitleExpanded : DetailViewConstants.readMoreButtonTitleNotExpanded)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.theme.red)
+                            Image(systemName: showFullDescription ? DetailViewConstants.readMoreButtonImageExpanded : DetailViewConstants.readMoreButtonImageNotExpanded)
+                        }
+                    }
+                    .padding(.top, 1)
+                }
+            }
+        }
+        .font(.textBody)
+    }
+    
+    // Website section
+    private var websiteSection: some View {
+        HStack {
+            if let websiteString = detailViewModel.websiteURL, let url = URL(string: websiteString) {
+                Link(DetailViewConstants.websiteLinkTitle, destination: url)
+            }
+            Divider()
+            if let redditString = detailViewModel.redditURL, let url = URL(string: redditString) {
+                Link(DetailViewConstants.redditLinkTitle, destination: url)
+            }
+        }
+        .tint(.blue)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .font(.infoLarge)
     }
 }

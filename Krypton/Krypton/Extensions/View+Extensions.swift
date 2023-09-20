@@ -14,7 +14,7 @@ struct TextFieldClearButton: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay {
-                if !fieldText.isEmpty {
+                if fieldText.isNotEmpty {
                     HStack {
                         Spacer()
                         Button {

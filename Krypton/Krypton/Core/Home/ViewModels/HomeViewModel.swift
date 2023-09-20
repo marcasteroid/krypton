@@ -80,7 +80,7 @@ class HomeViewModel: ObservableObject {
     }
     
     private func filterCoins(text: String, coins: [Coin]) -> [Coin] {
-        guard !text.isEmpty else {
+        guard text.isNotEmpty else {
             return coins
         }
         let lowercasedText = text.lowercased()

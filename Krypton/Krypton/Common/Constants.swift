@@ -95,6 +95,12 @@ struct PortfolioDataServiceConstants {
 struct DetailViewConstants {
     static let overviewSectionTitle: String = "Overview"
     static let additionalDetailsSectionTitle: String = "Additional details"
+    static let readMoreButtonTitleNotExpanded: String = "Read more"
+    static let readMoreButtonTitleExpanded: String = "Less"
+    static let readMoreButtonImageNotExpanded: String = "chevron.down"
+    static let readMoreButtonImageExpanded: String = "chevron.up"
+    static let websiteLinkTitle: String = "Website"
+    static let redditLinkTitle: String = "Reddit"
 }
 
 // MARK: - Detail view model
