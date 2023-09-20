@@ -89,5 +89,26 @@ struct PortfolioDataServiceConstants {
     static let loadPersistentStoresErrorDescription: String = "[🔥] Error loading Core Data"
     static let fetchingPortfolioEntitiesErrorDescription: String = "[🔥] Error fetching portfolio entities"
     static let savingToCoreDataErrorDescription: String = "[🔥] Error saving to Core Data"
-
 }
+
+// MARK: - Detail view
+struct DetailViewConstants {
+    static let overviewSectionTitle: String = "Overview"
+    static let additionalDetailsSectionTitle: String = "Additional details"
+}
+
+// MARK: - Detail view model
+struct DetailViewModelConstants {
+    static let statisticCurrentPrinceTitle: String = "Current price"
+    static let statisticMarketCapitalizationTitle: String = "Market capitalization"
+    static let statisticRankTitle: String = "Rank"
+    static let statisticVolumeTitle: String = "Volume"
+    static let statistic24hHighTitle: String = "24h high"
+    static let statistic24hLowTitle: String = "24h low"
+    static let statistic24hPriceChangeTitle: String = "24h price change"
+    static let statistic24hMarketCapitalizationChangeTitle: String = "24h market capitalization change"
+    static let statisticBlockTimeTitle: String = "Block time"
+    static let statisticHashingAlgorithmTitle: String = "Hashing algorithm"
+    static let statisticNotAvailable: String = "n/a"
+}
+

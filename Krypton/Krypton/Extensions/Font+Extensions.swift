@@ -50,8 +50,12 @@ extension Font {
         return Font.custom("LexendDeca-Regular", size: 16)
     }
     
-    public static var title: Font {
+    public static var titleLarge: Font {
         return Font.custom("LexendDeca-Bold", size: 23)
+    }
+    
+    public static var sectionTitle: Font {
+        return Font.custom("LexendDeca-Bold", size: 18)
     }
     
     public static var subTitle: Font {
