@@ -83,7 +83,7 @@ extension HomeView {
     // Home header
     private var homeHeader: some View {
         HStack {
-            CircleButtonView(iconName: showPortfolio ? CircleButtonConstants.plusButtonImageName : CircleButtonConstants.infoButtonImageName, width: 45, height: 45, shadowOpacity: 0.1)
+            CircleButtonView(iconName: CircleButtonConstants.plusButtonImageName, width: 35, height: 35, shadowOpacity: 0.1)
                 .animation(nil, value: UUID())
                 .onTapGesture {
                     showPortfolioView.toggle()
@@ -93,7 +93,7 @@ extension HomeView {
                 .font(.pageTitle)
                 .foregroundColor(Color.theme.accent)
             Spacer()
-            CircleButtonView(iconName: CircleButtonConstants.rightArrowImageName, width: 45, height: 45, shadowOpacity: 0.1)
+            CircleButtonView(iconName: CircleButtonConstants.rightArrowImageName, width: 35, height: 35, shadowOpacity: 0.1)
                 .rotationEffect(Angle(degrees: showPortfolio ? 180 : 0))
                 .onTapGesture {
                     withAnimation(.easeOut) {

@@ -32,7 +32,6 @@ struct HomeViewConstants {
 
 // MARK: - Circle button
 struct CircleButtonConstants {
-    static let infoButtonImageName: String = "info"
     static let plusButtonImageName: String = "plus"
     static let rightArrowImageName: String = "arrow.right"
     static let closeImageName: String = "xmark.circle.fill"
