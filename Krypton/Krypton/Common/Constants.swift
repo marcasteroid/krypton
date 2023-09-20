@@ -65,7 +65,7 @@ struct StatisticViewConstants {
     static let arrow: String = "arrow.up"
     static let statisticMarketCapHeaderTitle: String = "Market cap"
     static let statisticVolumeHeaderTitle: String = "Volume 24h"
-    static let statisticBTCDominanceHeaderTitle: String = "BTC dominance"
+    static let statisticBTCDominanceHeaderTitle: String = "Dominance"
     static let statisticPortfolioValueHeaderTitle: String = "Portfolio value"
 }
 

@@ -37,17 +37,7 @@ struct HomeView: View {
                             allCoinsList
                                 .transition(.move(edge: .leading))
                         } else {
-                            VStack {
-                                Spacer()
-                                Text("Nothing found...")
-                                    .font(.infoLarge)
-                                    .foregroundColor(Color.theme.secondaryText)
-                                Image("crying")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 50, height: 50)
-                                Spacer()
-                            }
+                            nothingFoundMessage
                         }
                     }
                     if showPortfolio {
@@ -103,6 +93,20 @@ extension HomeView {
                 }
         }
         .padding(.horizontal)
+    }
+    
+    private var nothingFoundMessage: some View {
+        VStack {
+            Spacer()
+            Text("Nothing found...")
+                .font(.infoLarge)
+            Image("crying")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+            Spacer()
+        }
+        .foregroundColor(Color.theme.secondaryText)
     }
     
     // All coins list
