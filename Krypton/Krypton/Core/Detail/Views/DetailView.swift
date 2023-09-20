@@ -36,6 +36,8 @@ struct DetailView: View {
     var body: some View {
         VStack {
             detailHeader
+            ChartView(coin: detailViewModel.coin)
+                .padding(.horizontal)
             ScrollView {
                 VStack(spacing: 20) {
                     overviewSection
@@ -43,6 +45,11 @@ struct DetailView: View {
                 }
             }
             .padding()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                navigationBarTrailingItems
+            }
         }
     }
 }
@@ -57,6 +64,17 @@ struct DetailView_Previews: PreviewProvider {
 
 // MARK: - Extensions
 extension DetailView {
+    // Navigation bar trailing items
+    private var navigationBarTrailingItems: some View {
+        HStack {
+            Text(detailViewModel.coin.symbol.uppercased())
+                .font(.textBody)
+            .foregroundColor(Color.theme.secondaryText)
+            CoinImageView(coin: detailViewModel.coin)
+                .frame(width: 25, height: 25)
+        }
+    }
+    
     // Detail header
     private var detailHeader: some View {
         HStack {

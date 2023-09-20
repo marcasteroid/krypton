@@ -1,5 +1,5 @@
 //
-//  UIApplication+Extension.swift
+//  UIApplication+Extensions.swift
 //  Krypton
 //
 //  Created by Marco Margarucci on 09/09/23.
