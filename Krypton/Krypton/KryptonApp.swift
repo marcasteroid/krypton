@@ -32,6 +32,7 @@ struct KryptonApp: App {
                             }
                         })
                 }
+                .navigationViewStyle(StackNavigationViewStyle()) // TODO: - Change this
                 .environmentObject(viewModel)
                 ZStack {
                     if showLaunchView {

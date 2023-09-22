@@ -70,7 +70,7 @@ extension DetailView {
     // Navigation bar trailing items
     private var navigationBarTrailingItems: some View {
         HStack {
-            Text(detailViewModel.coin.symbol.uppercased())
+            Text(detailViewModel.coin.symbol.uppercased() + "-")
                 .font(.textBody)
             .foregroundColor(Color.theme.secondaryText)
             CoinImageView(coin: detailViewModel.coin)
