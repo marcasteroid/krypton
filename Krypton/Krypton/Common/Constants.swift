@@ -17,6 +17,13 @@ struct GlobalConstants {
     static let coinDetailURLHead: String = "https://api.coingecko.com/api/v3/coins/"
     // Coin detail URL tail
     static let coinDetailURLTail: String = "?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false"
+    // Logo image name
+    static let logoImageName: String = "logo";
+}
+
+// MARK: - Launch view
+struct LaunchViewConstants {
+    static let loadingText: String = "Loading your portfolio"
 }
 
 // MARK: - Home view
