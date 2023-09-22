@@ -35,6 +35,8 @@ struct HomeViewConstants {
     static let listPriceHeader: String = "Price"
     static let refreshButtonImageName: String = "goforward"
     static let sortingIndicatorImageName: String = "chevron.down"
+    static let nothingFoundTitle: String = "Nothing found..."
+    static let nothingFoundImage: String = "crying"
 }
 
 // MARK: - Circle button

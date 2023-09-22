@@ -41,8 +41,12 @@ struct HomeView: View {
                         }
                     }
                     if showPortfolio {
-                        portfolioCoinsList
-                            .transition(.move(edge: .trailing))
+                        if homeViewModel.portfolioCoins.isEmpty && homeViewModel.searchText.isEmpty {
+                            nothingFoundMessage
+                        } else {
+                            portfolioCoinsList
+                                .transition(.move(edge: .trailing))
+                        }
                     }
                     Spacer(minLength: 0)
                 }
@@ -98,9 +102,9 @@ extension HomeView {
     private var nothingFoundMessage: some View {
         VStack {
             Spacer()
-            Text("Nothing found...")
+            Text(HomeViewConstants.nothingFoundTitle)
                 .font(.infoLarge)
-            Image("crying")
+            Image(HomeViewConstants.nothingFoundImage)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
