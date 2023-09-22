@@ -133,8 +133,8 @@ extension PortfolioView {
                 .frame(maxWidth: .infinity)
                 .frame(height: 50)
         }
-        .background(isSaved ? Color.gray.opacity(0.5) : Color.theme.accent)
-        .foregroundColor(isSaved ? Color.theme.accent : .white)
+        .background(Color.theme.button)
+        .foregroundColor(.white)
         .font(.bodySemiBold)
         .cornerRadius(10)
         .padding()
